@@ -2,7 +2,7 @@ pipeline {
     agent any
 	
 	environment {
-        PATH = "$PATH:/var/jenkins_home/workspace/shopping-server-pipeline/"
+        PATH = "$PATH:/usr/local/bin/"
     }
 	
     stages {
