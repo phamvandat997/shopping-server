@@ -1,15 +1,14 @@
 pipeline {
-    agent none
-   stages {     
-    stage('Maven Install') {
-      agent {         
-       docker {          
-         image 'maven:3.5.0'         
-     }       
-  }       
-  steps {
-       sh 'mvn clean install'
-       }
-     }
-   }
- }
+    agent any
+	
+    stages {
+        stage('Deploy docker') {
+            steps {
+              // This step should not normally be used in your script. Consult the inline help for details.
+withDockerRegistry(credentialsId: 'docker', url: 'https://index.docker.io/v1/') {
+    // some block
+}
+            }
+        }
+    }
+}
