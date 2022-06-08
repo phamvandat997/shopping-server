@@ -1,0 +1,32 @@
+spring:
+  profiles:
+     active: dev
+  application:
+    name: shop-server
+  datasource:
+    url: jdbc:postgresql://localhost:5432/shopping
+    username: postgres
+    password: admin
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    show-sql: false
+    hibernate:
+      ddlAuto: update
+  mail:
+     username: phamvandat0029@gmail.com
+     password: awoyilgifybkbhpp
+     host: smtp.gmail.com
+     port: 587
+     protocol: smtp
+     properties:
+        mail:
+           smtp:
+              auth: true
+              starttls: 
+                 enable: true
+auth:
+  jwt:
+    secret: r]?H=oE5!IVx[*CHGU|P"jbpDCg<qj!B1N:-vz}M0_<~$l}g#v>%t=u.'zVp;}C
+    expiration: 604800000
+server:
+  port: 8082
