@@ -4,8 +4,8 @@ pipeline {
     stages {
         stage('Deploy docker') {
             steps {
-              sh "docker-compose build"
-              sh "docker-compose up -d"
+              sh "chmod u+x docker-compose.yml"
+              sh "docker-compose up"
             }
         }
     }
