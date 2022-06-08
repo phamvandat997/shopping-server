@@ -1,11 +1,15 @@
 pipeline {
-    agent any
-	
-    stages {
-        stage('Deploy docker') {
-            steps {
-              sh 'docker-compose up'
-            }
-        }
-    }
-}
+    agent none
+   stages {     
+    stage('Maven Install') {
+      agent {         
+       docker {          
+         image 'maven:3.5.0'         
+     }       
+  }       
+  steps {
+       sh 'mvn clean install'
+       }
+     }
+   }
+ }
