@@ -2,12 +2,9 @@ pipeline {
     agent any
 	
     stages {
-        stage('Deploy docker') {
+        stage('Build') { 
             steps {
-              // This step should not normally be used in your script. Consult the inline help for details.
-withDockerRegistry(credentialsId: 'docker', url: 'https://index.docker.io/v1/') {
-    // some block
-}
+                sh 'mvn clean install -f shopping-server/pom.xml'
             }
         }
     }
