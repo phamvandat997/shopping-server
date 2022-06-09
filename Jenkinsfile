@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Build') { 
             steps {
-                sh 'mvn clean install -f /var/jenkins_home/workspace/shopping-server-pipeline/pom.xml'
+                sh 'mvn clean install -f shopping-server/pom.xml'
             }
         }
     }
